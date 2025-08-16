@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#006C35">
+  <title>فريق ساتيك</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&display=swap" rel="stylesheet">
+  <script defer src="js/script.js"></script>
+
+</head>
+<body>
+  <header class="header">
+    <a class="logo" href="index.html">
+      <img src="assets/logo.jpg" alt="شعار ساتيك">
+      <span>ساتيك</span>
+    </a>
+
+    <nav class="nav-menu" id="navMenu" aria-label="القائمة الرئيسية">
+      <ul class="nav-links" id="navLinks" role="menubar">
+        <li role="none"><a role="menuitem" href="index.html">الرئيسية</a></li>
+        <li role="none"><a role="menuitem" href="about.html">من نحن</a></li>
+        <li role="none"><a role="menuitem" href="projects.html">المشاريع</a></li>
+        <li role="none"><a role="menuitem" href="contact.html">تواصل معنا</a></li>
+      </ul>
+    </nav>
+    <button id="hamburger" class="hamburger" aria-label="فتح القائمة" aria-controls="navMenu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <div class="backdrop" id="backdrop" aria-hidden="true"></div>
+  </header>
+
+  <main class="hero fade-in" id="home">
+    <h1>فريق ساتيك السعودي</h1>
+    <p>نُطوّر مشاريع وأفكار تقنية سعودية تصنع أثرًا حقيقيًا.</p>
+<button class="learn-more" onclick="window.location.href='about.html'">
+  <span aria-hidden="true" class="circle">
+    <span class="icon arrow"></span>
+  </span>
+  <span class="button-text">اعرف أكثر</span>
+</button>
+  </main>
+  <footer>
+    <p>© 2025 جميع الحقوق محفوظة - فريق ساتيك</p>
+  </footer>
+
+  <script>document.documentElement.classList.add('ready');</script>
+</body>
+</html>

@@ -1,0 +1,176 @@
+/* هوية وألوان */
+:root{
+  --green: #049349; /* الأخضر السعودي */
+  --bg: #0b0b0b;
+  --text: #ffffff;
+  --muted: #b8b8b8;
+  
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;font-family:'Cairo',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden}
+
+/* Header */
+.header{
+  position:sticky; top:0; z-index:100;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:12px 20px; background:#000; border-bottom:1px solid #111;
+}
+.logo{display:flex; align-items:center; gap:10px; font-weight:800; color:var(--green); text-decoration:none}
+.logo img{height:40px; width:auto; border-radius:10px}
+/* Hamburger button */
+.hamburger{width:44px; height:36px; border:1px solid #222; border-radius:10px; background:transparent; display:grid; place-items:center; cursor:pointer}
+.hamburger span{display:block; width:20px; height:2px; background:#fff; margin:3px 0; transition:.25s}
+/* Backdrop */
+.backdrop{position:fixed; inset:0; background:rgba(0,0,0,.5); opacity:0; pointer-events:none; transition:.25s; z-index:90}
+
+/* Nav links (desktop) */
+.nav-links{list-style:none; display:flex; gap:18px; margin:0; padding:0}
+.nav-links a{color:#fff; text-decoration:none; padding:8px 10px; border-radius:10px; transition:.2s}
+.nav-links a:hover{background:#101010; color:var(--green)}
+
+@media(max-width:900px){
+  /* Off-canvas for mobile */
+  .nav-links{
+    position:fixed; top:64px; right:0; width:260px; height:calc(100% - 64px);
+    background:#000; border-left:1px solid #1a1a1a; padding:12px; gap:8px;
+    flex-direction:column; transform:translateX(110%); transition:.25s; z-index:99;
+  }
+  body.menu-open .nav-links{transform:translateX(0)}
+  body.menu-open .backdrop{opacity:1; pointer-events:auto}
+  body.menu-open #hamburger[aria-expanded="true"] span:nth-child(1){transform:translateY(5px) rotate(45deg)}
+  body.menu-open #hamburger[aria-expanded="true"] span:nth-child(2){opacity:0}
+  body.menu-open #hamburger[aria-expanded="true"] span:nth-child(3){transform:translateY(-5px) rotate(-45deg)}
+}
+
+/* Hero & pages */
+.hero{min-height:60vh; display:grid; place-items:center; text-align:center; padding:80px 20px;
+  background: radial-gradient(900px 500px at 90% -10%, rgba(0,108,53,.25), transparent 60%),
+              radial-gradient(900px 500px at 0% 100%, rgba(0,108,53,.2), transparent 60%),
+              linear-gradient(135deg,#000 0%, #0a0a0a 100%);
+}
+.hero h1{font-size:clamp(28px,4vw,48px); margin:0 0 10px; font-weight:800; color:var(--green)}
+.hero p{color:var(--muted); font-size:clamp(14px,2vw,18px); margin:0 0 20px}
+.btn{display:inline-block;background:var(--green);color:#fff;text-decoration:none;padding:12px 20px;border-radius:14px;font-weight:700;transition:transform .2s}
+.btn:hover{transform:translateY(-2px)}
+
+.page{padding:50px 20px; max-width:1100px; margin:0 auto}
+.cards{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:16px}
+.card{background:#0f0f0f; border:1px solid #1a1a1a; border-radius:16px; padding:16px}
+
+/* Animations */
+.fade-in{opacity:0; transform:translateY(24px)}
+.ready .fade-in{animation:fadeInUp .8s ease forwards}
+@keyframes fadeInUp{to{opacity:1; transform:translateY(0)}}
+
+/* Footer */
+footer{border-top:1px solid #111; padding:18px 10px; text-align:center; background:#000; color:#888}
+/* From Uiverse.io by Saad3092003 */ 
+button {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  outline: none;
+  border: 0;
+  vertical-align: middle;
+  text-decoration: none;
+  background: transparent;
+  padding: 0;
+  font-size: inherit;
+  font-family: inherit;
+}
+
+button.learn-more {
+  width: 12rem;
+  height: auto;
+}
+
+button.learn-more .circle {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  box-shadow: 0 0 5px 1px white;
+  position: relative;
+  display: block;
+  margin: 0;
+  width: 3rem;
+  height: 3rem;
+  background: #282936;
+  border-radius: 1.625rem;
+}
+
+button.learn-more .circle .icon {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  background: #fff;
+}
+
+button.learn-more .circle .icon.arrow {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  right: 0.625rem; /* بدل left: 0.625rem; */
+  width: 1.125rem;
+  height: 0.125rem;
+  background: none;
+}
+
+button.learn-more .circle .icon.arrow::before {
+  position: absolute;
+  content: "";
+  top: -0.29rem;
+  left: 0.0625rem; /* بدل right: 0.0625rem; */
+  width: 0.625rem;
+  height: 0.625rem;
+  border-top: 0.125rem solid #fff;
+  border-left: 0.125rem solid #fff; /* بدل border-right */
+  transform: rotate(-45deg); /* بدل 45deg */
+}
+
+button.learn-more .button-text {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0.75rem 0;
+  margin: 0 1.85rem 0 0; /* بدل margin: 0 0 0 1.85rem; */
+  color: rgba(255, 255, 255, 0.493);
+  font-weight: 700;
+  line-height: 1.6;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+button:hover .circle {
+  width: 100%;
+  box-shadow: 0 0 10px 2px white;
+}
+
+button:hover .button-text {
+  transform: translate(1.7rem, 0); /* بدل -1.7rem */
+}
+
+button:hover .circle .icon.arrow {
+  background: #fff;
+  transform: translate(-8.7rem, 0); /* بدل 8.7rem */
+}
+
+button:active .circle .icon.arrow {
+  transform: translate(-9.5rem, 0); /* بدل 9.5rem */
+  transition: all 0.3s;
+}
+
+button:active .circle {
+  transform: scale(0.9);
+  transition: all 0.3s;
+  box-shadow: 0 0 5px 0.5px white;
+}
+
+button:hover .button-text {
+  color: #fff;
+}
+
+button:active .button-text {
+  color: rgba(255, 255, 255, 0.459);
+}

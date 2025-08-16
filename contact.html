@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#006C35">
+  <title>فريق ساتيك</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&display=swap" rel="stylesheet">
+  <script defer src="js/script.js"></script>
+
+</head>
+<body>
+  <header class="header">
+    <a class="logo" href="index.html">
+      <img src="assets/logo.jpg" alt="شعار ساتيك">
+      <span>ساتيك</span>
+    </a>
+
+    <nav class="nav-menu" id="navMenu" aria-label="القائمة الرئيسية">
+      <ul class="nav-links" id="navLinks" role="menubar">
+        <li role="none"><a role="menuitem" href="index.html">الرئيسية</a></li>
+        <li role="none"><a role="menuitem" href="about.html">من نحن</a></li>
+        <li role="none"><a role="menuitem" href="projects.html">المشاريع</a></li>
+        <li role="none"><a role="menuitem" href="contact.html">تواصل معنا</a></li>
+      </ul>
+    </nav>
+    <button id="hamburger" class="hamburger" aria-label="فتح القائمة" aria-controls="navMenu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <div class="backdrop" id="backdrop" aria-hidden="true"></div>
+  </header>
+
+  <section class="page fade-in">
+    <h1>تواصل معنا</h1>
+    <p>لطلب تعاون أو شراكة:</p>
+    <div class="contact-box">
+      <a href="mailto:hello@saitek.sa">hello@saitek.sa</a>
+      <a href="https://wa.me/966000000000" target="_blank" rel="noopener">واتساب</a>
+      <a href="https://x.com/saitek" target="_blank" rel="noopener">X (تويتر)</a>
+    </div>
+    
+  </section>
+  <footer>
+    <p>© 2025 جميع الحقوق محفوظة - فريق ساتيك</p>
+  </footer>
+
+  <script>document.documentElement.classList.add('ready');</script>
+</body>
+</html>
